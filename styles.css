@@ -1,135 +1,182 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ====== UCF Black & Gold (accessible) ====== */
+:root{
+  --ucf-black: #000000;
+  --ucf-gold: #C5A100;       /* knight gold-ish, accessible */
+  --ucf-gold-soft: #F3E8B0;  /* soft accent */
+  --text: #1a1a1a;
+  --muted: #666;
+  --card: #ffffff;
+  --bg: #f6f6f6;
+  --link: #0b57d0;           /* readable link color on white */
 }
 
+/* Reset/structure */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f0f9ff; /* Light blue background */
-  color: #333;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  padding: 20px;
+  padding: 16px;
 }
 
-/* Container to center content */
-.container {
-  max-width: 900px;
-  margin: auto;
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Header styles */
-.site-header {
-  background-color: #38bdf8; /* Soft blue */
-  color: white;
-  padding: 20px;
-  border-radius: 10px 10px 0 0;
-}
-
-.site-title {
-  font-size: 1.75rem;
-}
-
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-  padding: 0;
-}
-
-.site-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.site-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Section headers */
-h2 {
-  margin-top: 30px;
-  font-size: 1.4rem;
-  color: #0ea5e9; /* Medium blue */
-  border-bottom: 1px solid #bae6fd;
-  padding-bottom: 5px;
-}
-
-h3 {
-  font-size: 1.1rem;
-  color: #166534; /* Dark green */
-  margin-top: 10px;
-}
-
-/* Meta info (like dates/locations) */
-.meta {
-  font-size: 0.9em;
-  color: #666;
-}
-
-/* Profile picture */
-.profile-pic img {
-  width: 130px;
+/* Skip link (the 'clickable box at the top') */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  background: var(--ucf-gold);
+  color: var(--ucf-black);
+  padding: 8px 12px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.skip-link:focus, .skip-link:focus-visible {
+  left: 12px;
+  outline: 3px solid #fff;
 }
 
-/* Skills styling */
-.skills ul,
-ul.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  list-style: none;
-  padding-left: 0;
+/* Containers */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
 }
 
+/* Header / Nav */
+.site-header {
+  background: var(--ucf-black);
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px 0;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  gap: 12px;
+}
+.site-title {
+  font-size: 1.5rem;
+  letter-spacing: .3px;
+  color: var(--ucf-gold);
+  margin: 0;
+}
+
+/* Nav links look like tidy gold “pills” */
+.site-nav ul { list-style: none; display: flex; gap: 10px; }
+.site-nav a {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ucf-gold);
+  border: 1px solid rgba(255,255,255,.2);
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--ucf-gold);
+  color: var(--ucf-black);
+  border-color: var(--ucf-gold);
+}
+.site-nav a[aria-current="page"] {
+  background: var(--ucf-gold);
+  color: var(--ucf-black);
+  border-color: var(--ucf-gold);
+  font-weight: 700;
+}
+
+/* Sections */
+h2 {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  font-size: 1.35rem;
+  color: var(--ucf-black);
+  border-bottom: 2px solid var(--ucf-gold);
+  padding-bottom: 4px;
+}
+h3 { margin-top: 10px; font-size: 1.1rem; }
+
+.meta { color: var(--muted); font-size: .95rem; }
+
+/* Intro/profile block */
+.intro-card {
+  border: 2px solid var(--ucf-gold);
+  border-radius: 12px;
+  padding: 16px;
+  background: #fffef5; /* subtle warm backdrop */
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.profile-pic img {
+  width: 130px; height: auto;
+  border-radius: 10px;
+  border: 2px solid var(--ucf-gold);
+}
+
+/* Items & lists */
+.item { padding: 14px 0; border-bottom: 1px solid #e9e9e9; }
+.item:last-child { border-bottom: 0; }
+ul { padding-left: 20px; }
+.bullets { margin-top: 6px; }
+
+/* Skills as gold chips */
+.tag-list { 
+  list-style: none; 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 8px; 
+  padding-left: 0; 
+}
 .tag-list li {
-  background-color: #a7f3d0; /* Soft green */
-  color: #065f46;
-  padding: 6px 12px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-/* Article block styling */
-.item {
-  margin-top: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
+  background: var(--ucf-gold);
+  color: var(--ucf-black);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .92rem;
 }
 
 /* Footer */
 .site-footer {
   text-align: center;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #888;
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
+  margin-top: 20px;
+  color: var(--muted);
+  padding-top: 12px;
+  border-top: 1px solid #eaeaea;
 }
 
-/* Responsive layout */
-@media (max-width: 600px) {
-  .site-nav ul {
-    flex-direction: column;
-    gap: 8px;
-  }
+/* Links in content */
+a { color: var(--link); }
+a:hover, a:focus-visible { text-decoration: underline; }
 
-  .intro-grid {
-    display: block;
-  }
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid var(--ucf-gold-soft);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
 
-  .profile-pic img {
-    width: 100%;
-    max-width: 150px;
-  }
+/* Responsive */
+@media (max-width: 640px) {
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .site-nav ul { flex-wrap: wrap; }
+  .intro-grid { grid-template-columns: 1fr; }
+  .profile-pic img { width: 160px; }
 }
