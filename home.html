@@ -1,1 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Resume</title>
+  <meta name="description" content="Résumé of Joel Knopp" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Your Name</h1>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a aria-current="page" href="index.html">Resume</a></li>
+          <li><a href="project1.html">Project 1</a></li>
+          <li><a href="project2.html">Project 2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section aria-labelledby="contact-heading" class="intro-card">
+      <div class="intro-grid">
+        <figure class="profile-pic">
+          <!-- Replace with a real, professional photo -->
+          <img src="assets/profile.jpg" alt="Professional headshot of Your Name" />
+        </figure>
+        <div>
+          <h2 id="contact-heading">Contact</h2>
+          <p>
+            <strong>Name:</strong> Your Name<br />
+            <strong>Email:</strong> <a href="mailto:jo463181@knights.ucf.edu">yourNID@knights.ucf.edu</a><br />
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/joel-knopp-60520b314/" target="_blank" rel="noopener">linkedin.com/in/your-handle</a>
+          </p>
+          <section aria-labelledby="objective-heading" class="objective">
+            <h2 id="objective-heading">Professional Objective</h2>
+            <p>
+              I am a senior Computer Science major at the University of Central Florida with strong proficiency in Java, C, and Python. With hands-on experience in full-stack development, database management, and API integration, I aim to contribute to impactful, real-world projects while continuing to grow my technical and collaborative skills.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <article class="item">
+        <header class="item-header">
+          <h3>University of Central Florida (UCF) — B.S. in Computer Science</h3>
+          <span class="meta">Expected May 2026 • Orlando, FL</span>
+        </header>
+        <p class="bullets">
+          Relevant coursework: Data Structures, Databases, Artifical Intelligence, Web Dev, etc.
+        </p>
+      </article>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <article class="item">
+        <header class="item-header">
+          <h3><a href="project1.html">Callisto Contact Manager</a></h3>
+          <span class="meta">Tech: MySQL</span>
+        </header>
+        <p>Contact Manager. Users can create an account and locally manage their own list of contacts.</p>
+      </article>
+
+      <article class="item">
+        <header class="item-header">
+          <h3><a href="project2.html">vibeCheck</a></h3>
+          <span class="meta">Tech: React, Node, MongoDB </span>
+        </header>
+        <p>Users can create accounts with email verification and label and save their favorite locations on a campus map.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="skills-heading" class="skills">
+      <h2 id="skills-heading">Skills</h2>
+      <ul class="tag-list" role="list">
+        <li>Java</li><li>Python</li><li>JavaScript</li><li>React</li>
+        <li>Node.js</li><li>Express</li><li>SQL</li><li>MongoDB</li>
+      </ul>
+    </section>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Joel Knopp • UCF</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
