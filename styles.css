@@ -1,1 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f0f9ff; /* Light blue background */
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container to center content */
+.container {
+  max-width: 900px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header styles */
+.site-header {
+  background-color: #38bdf8; /* Soft blue */
+  color: white;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+}
+
+.site-title {
+  font-size: 1.75rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.site-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Section headers */
+h2 {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  color: #0ea5e9; /* Medium blue */
+  border-bottom: 1px solid #bae6fd;
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #166534; /* Dark green */
+  margin-top: 10px;
+}
+
+/* Meta info (like dates/locations) */
+.meta {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Profile picture */
+.profile-pic img {
+  width: 130px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Skills styling */
+.skills ul,
+ul.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.tag-list li {
+  background-color: #a7f3d0; /* Soft green */
+  color: #065f46;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* Article block styling */
+.item {
+  margin-top: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .site-nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .intro-grid {
+    display: block;
+  }
+
+  .profile-pic img {
+    width: 100%;
+    max-width: 150px;
+  }
+}
