@@ -1,1 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Callisto Contact Manager — Project | Joel Knopp</title>
+  <meta name="description" content="Details about Callisto Contact Manager, a MySQL-based contact management project by Joel Knopp." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Joel Knopp</h1>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Resume</a></li>
+          <li><a aria-current="page" href="project1.html">Project 1</a></li>
+          <li><a href="project2.html">Project 2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <article>
+      <header class="intro-card">
+        <div class="intro-grid">
+          <figure class="profile-pic" style="align-self:start">
+            <!-- Replace with a real screenshot/illustration -->
+            <img src="assets/project1.jpg" alt="Screenshot of Callisto Contact Manager app interface" />
+          </figure>
+          <div>
+            <h2>Callisto Contact Manager</h2>
+            <p class="meta">Tech: MySQL • PHP or Node API • HTML/CSS/JS</p>
+            <p>
+              Callisto is a simple, focused web app where users create an account and securely manage a personal list of contacts. 
+              Core features include adding, searching, editing, and deleting contacts with server-side validation.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <section aria-labelledby="desc-heading">
+        <h2 id="desc-heading">Project Description</h2>
+        <p>
+          This project implements a basic authentication flow (register/login), hashed passwords, and CRUD endpoints for contacts.
+          The database uses normalized tables and indexes for fast lookups. Frontend forms include accessible labels, helpful validation
+          messages, and keyboard-friendly controls.
+        </p>
+      </section>
+
+      <section aria-labelledby="features-heading">
+        <h2 id="features-heading">Key Features</h2>
+        <ul>
+          <li>Account creation, login, and logout with session handling</li>
+          <li>Create, read, update, and delete contacts (name, phone, email, notes)</li>
+          <li>Search and filter contacts by name or tag</li>
+          <li>Server-side input validation and error handling</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills Learned</h2>
+        <ul class="tag-list" role="list">
+          <li>SQL schema design</li><li>Parameterized queries</li><li>RESTful API design</li>
+          <li>Form validation</li><li>Auth & hashing</li><li>Accessibility basics</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="role-heading">
+        <h2 id="role-heading">My Role & Contributions</h2>
+        <p>
+          I built the database schema (users, contacts), wrote the CRUD endpoints, and implemented the login flow with hashed passwords.
+          I also added search with indexes and improved the UI for error states and form feedback.
+        </p>
+      </section>
+
+      <footer class="item" style="border-bottom:0">
+        <p>
+          <a href="index.html">← Back to Resume</a>
+        </p>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Joel Knopp • UCF</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
