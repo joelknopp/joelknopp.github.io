@@ -1,1 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>vibeCheck — Project | Joel Knopp</title>
+  <meta name="description" content="Details about vibeCheck, a MERN application for saving campus locations with accounts and email verification." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Joel Knopp</h1>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Resume</a></li>
+          <li><a href="project1.html">Project 1</a></li>
+          <li><a aria-current="page" href="project2.html">Project 2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <article>
+      <header class="intro-card">
+        <div class="intro-grid">
+          <figure class="profile-pic" style="align-self:start">
+            <!-- Replace with a real screenshot/illustration -->
+            <img src="assets/project2.jpg" alt="Map-based interface of vibeCheck highlighting saved campus locations" />
+          </figure>
+          <div>
+            <h2>vibeCheck</h2>
+            <p class="meta">Tech: React • Node • Express • MongoDB • Email Verification</p>
+            <p>
+              vibeCheck is a MERN app where users sign up with email verification, then save, label, and favorite campus locations on
+              an interactive map. It’s designed to help students quickly find study spots and navigate a large campus.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <section aria-labelledby="desc2-heading">
+        <h2 id="desc2-heading">Project Description</h2>
+        <p>
+          The system features a Node/Express API with JWT-based auth, a MongoDB data model for users and places, and a React frontend.
+          Users can create named pins, add notes/tags, and mark favorites. The design supports responsive layouts and keyboard navigation.
+        </p>
+      </section>
+
+      <section aria-labelledby="features2-heading">
+        <h2 id="features2-heading">Key Features</h2>
+        <ul>
+          <li>User registration with email verification and secure login</li>
+          <li>Create and manage saved locations with titles, tags, and notes</li>
+          <li>Favorite lists and quick filtering</li>
+          <li>Responsive, accessible UI suitable for mobile and desktop</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="skills2-heading">
+        <h2 id="skills2-heading">Skills Learned</h2>
+        <ul class="tag-list" role="list">
+          <li>React state & routing</li><li>Express APIs</li><li>MongoDB schema design</li>
+          <li>JWT auth</li><li>Email verification flow</li><li>Responsive UI</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="role2-heading">
+        <h2 id="role2-heading">My Role & Contributions</h2>
+        <p>
+          I implemented the authentication and email verification flow, designed the MongoDB models, and built the location
+          saving/favoriting features. I also handled a11y and responsive layout details to ensure a smooth experience.
+        </p>
+      </section>
+
+      <footer class="item" style="border-bottom:0">
+        <p>
+          <a href="index.html">← Back to Resume</a>
+        </p>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Joel Knopp • UCF</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
