@@ -26,16 +26,21 @@
   <main id="main" class="container" role="main">
     <section aria-labelledby="contact-heading" class="intro-card">
       <div class="intro-grid">
-        <figure class="profile-pic">    
-          <img src="assets/headshot.png" alt="Professional headshot" />
+        <figure class="profile-pic">
+          <img src="assets/headshot.png" alt="Professional headshot of Joel Knopp" />
         </figure>
-        <div>
-          <h2 id="contact-heading">Contact</h2>
-          <p>
-            <strong>Name:</strong> Joel Knopp<br />
-            <strong>Email:</strong> <a href="mailto:jo463181@knights.ucf.edu">jo463181@knights.ucf.edu</a><br />
-            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/joel-knopp-60520b314/" target="_blank" rel="noopener">https://www.linkedin.com/in/joel-knopp-60520b314/</a>
-          </p>
+
+        <!-- NEW: wrapper so contact + objective stack and align to top -->
+        <div class="intro-content">
+          <section aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>
+              <strong>Name:</strong> Joel Knopp<br />
+              <strong>Email:</strong> <a href="mailto:jo463181@knights.ucf.edu">jo463181@knights.ucf.edu</a><br />
+              <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/joel-knopp-60520b314/" target="_blank" rel="noopener">https://www.linkedin.com/in/joel-knopp-60520b314/</a>
+            </p>
+          </section>
+
           <section aria-labelledby="objective-heading" class="objective">
             <h2 id="objective-heading">Professional Objective</h2>
             <p>
@@ -86,13 +91,14 @@
       </ul>
     </section>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Joel Knopp • UCF</p>
-    </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </footer>
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Joel Knopp • UCF</p>
+      </div>
+      <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </main>
 </body>
 </html>
