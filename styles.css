@@ -1,4 +1,4 @@
-/* ====== UCF Black & Gold (accessible) ====== */
+
 :root{
   --ucf-black: #000000;
   --ucf-gold: #C5A100;       /* knight gold-ish, accessible */
@@ -10,7 +10,7 @@
   --link: #0b57d0;           /* readable link color on white */
 }
 
-/* Reset/structure */
+/* Reset structure */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
@@ -20,17 +20,23 @@ body {
   color: var(--text);
   line-height: 1.6;
   padding: 16px;
+
+  /* ensure overlay sits above bg but below content */
+  position: relative;
+  z-index: 0;
 }
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.4); /* light overlay: white at 40% opacity */
-  z-index: -1;
+  background: rgba(255, 255, 255, 0.4); /* light overlay */
+  z-index: 0;          /* above body background */
   pointer-events: none;
 }
+/* make content sit above overlay */
+.site-header, .container, .site-footer { position: relative; z-index: 1; }
 
-/* Skip link (the 'clickable box at the top') */
+/* Skip link  */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -83,7 +89,6 @@ body::before {
   margin: 0;
 }
 
-/* Nav links look like tidy gold “pills” */
 .site-nav ul { list-style: none; display: flex; gap: 10px; }
 .site-nav a {
   display: inline-block;
@@ -129,9 +134,9 @@ h3 { margin-top: 10px; font-size: 1.1rem; }
 }
 .intro-grid {
   display: grid;
-  grid-template-columns: 200px 1fr; /* was 130px */
+  grid-template-columns: 200px 1fr; /* photo column + content */
   gap: 24px;
-  align-items: start;
+  align-items: start;              /* top-align image + text */
 }
 .intro-content {
   display: flex;
@@ -139,11 +144,12 @@ h3 { margin-top: 10px; font-size: 1.1rem; }
   gap: 16px; 
 }
 
+.profile-pic { margin: 0; align-self: start; }
 .profile-pic img {
-  width: 100%;          
-  max-width: 200px;     
+  width: 100%;          /* fill the 200px column */
+  max-width: 200px;     /* easy to tweak: 180–240px */
   height: auto;
-  display: block;      
+  display: block;       /* avoids baseline gaps */
   border-radius: 10px;
   border: 2px solid var(--ucf-gold);
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
@@ -192,13 +198,7 @@ a:hover, a:focus-visible { text-decoration: underline; }
   border-radius: 6px;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .header-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .site-nav ul { flex-wrap: wrap; }
-  .intro-grid { grid-template-columns: 1fr; }
-  .profile-pic img { width: 160px; }
-}
+/* Project page full-width image */
 .project-image {
   margin: 24px 0;
   text-align: center;
@@ -215,4 +215,14 @@ a:hover, a:focus-visible { text-decoration: underline; }
   margin-top: 8px;
   font-size: 0.95rem;
   color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .site-nav ul { flex-wrap: wrap; }
+
+  .intro-grid { grid-template-columns: 1fr; }
+  .profile-pic { margin-bottom: 8px; }
+  .profile-pic img { max-width: 160px; width: 100%; }
 }
